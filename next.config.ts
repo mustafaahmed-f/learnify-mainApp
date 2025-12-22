@@ -1,16 +1,15 @@
 import type { NextConfig } from "next";
 
+// Next.js 15 - experimental.turbopack
 const nextConfig: NextConfig = {
-  /* config options here */
-  output: "standalone",
-  // target: "serverless",
-  // webpackDevMiddleware: (config: any) => {
-  //   config.watchOptions = {
-  //     poll: 1000,
-  //     aggregateTimeout: 300,
-  //   };
-  //   return config;
-  // },
+  cacheComponents: true,
+  experimental: {
+    // @ts-expect-error
+    turbopack: {
+      // options
+    },
+    turbopackFileSystemCacheForDev: true,
+  },
 };
 
 export default nextConfig;
