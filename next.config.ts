@@ -10,6 +10,18 @@ const nextConfig: NextConfig = {
     },
     turbopackFileSystemCacheForDev: true,
   },
+
+  async rewrites() {
+    return [
+      {
+        source: "/adminDashboard/:path*",
+        destination:
+          process.env.ENVIRONMENT === "dev"
+            ? `http://localhost:3001/:path*`
+            : "",
+      },
+    ];
+  },
 };
 
 export default nextConfig;
