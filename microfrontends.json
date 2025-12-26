@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/microfrontends.json",
+  "applications": {
+    "learnify-main-app": {
+      "development": {
+        "fallback": "localhost:3000"
+      }
+    },
+    "learnify-admin-dashboard": {
+      "routing": [
+        {
+          "paths": ["/adminDashboard", "/adminDashboard/:path*"]
+        }
+      ]
+    }
+  }
+}
